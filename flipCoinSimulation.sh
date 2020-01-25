@@ -37,7 +37,10 @@ function calculatePercentage()
 	echo "Percentage ${coin[@]}"
 }
 read -p "How many times you want to flip a coin: " noOfFlip
-read -p "Enter your choice : 1) Singlet 2) Doublet " choice
+echo "1) Single coin"
+echo "2) Double coins"
+echo "3) Three coins"
+read -p "Enter your choice : " choice
 case $choice in
    1)
       noOfCoin=1
@@ -45,6 +48,9 @@ case $choice in
    2)
       noOfCoin=2
       ;;
+	3)
+		noOfCoin=3
+		;;
    *)
       echo "Invalid Choice"
       ;;
