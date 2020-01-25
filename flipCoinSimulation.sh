@@ -53,25 +53,25 @@ echo "3) Three coins"
 read -p "Enter your choice : " choice
 
 case $choice in
-   1)
-      noOfCoin=1
+	1)
+		noOfCoin=1
 		flipCoin $noOfFlip $noOfCoin
 		calculatePercentage
 		winningPercentage
-      ;;
-   2)
-      noOfCoin=2
+		;;
+	2)
+		noOfCoin=2
 		flipCoin $noOfFlip $noOfCoin
 		calculatePercentage
 		winningPercentage
-      ;;
+		;;
 	3)
 		noOfCoin=3
 		flipCoin $noOfFlip $noOfCoin
 		calculatePercentage
 		winningPercentage
 		;;
-   *)
-      echo "Invalid Choice"
-      ;;
+	*)
+		echo "Invalid Choice"
+		;;
 esac
