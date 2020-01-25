@@ -36,25 +36,42 @@ function calculatePercentage()
 	echo "Key        ${!coin[@]}"
 	echo "Percentage ${coin[@]}"
 }
+
+function winningPercentage()
+{
+   echo "Win Combination Percentage"
+   for i in ${!coin[@]}
+   do
+      echo "$i ${coin[$i]}"
+   done | sort -k2 -rn | head -1
+}
+
 read -p "How many times you want to flip a coin: " noOfFlip
-echo "1) Single coin"
-echo "2) Double coins"
+echo "1) One coin"
+echo "2) Two coins"
 echo "3) Three coins"
 read -p "Enter your choice : " choice
+
 case $choice in
    1)
       noOfCoin=1
+		flipCoin $noOfFlip $noOfCoin
+		calculatePercentage
+		winningPercentage
       ;;
    2)
       noOfCoin=2
+		flipCoin $noOfFlip $noOfCoin
+		calculatePercentage
+		winningPercentage
       ;;
 	3)
 		noOfCoin=3
+		flipCoin $noOfFlip $noOfCoin
+		calculatePercentage
+		winningPercentage
 		;;
    *)
       echo "Invalid Choice"
       ;;
 esac
-
-flipCoin $noOfFlip $noOfCoin
-calculatePercentage
